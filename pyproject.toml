@@ -1,0 +1,22 @@
+[project]
+name = "outcast"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.2.6",
+    "pandas>=2.3.0",
+    "scikit-learn>=1.7.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.16.1",
+    "pandas-stubs>=2.3.0.250703",
+    "pytest>=8.4.1",
+]
