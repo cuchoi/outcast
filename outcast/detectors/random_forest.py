@@ -90,7 +90,6 @@ class ConditionalGradientBoostingQuantile(BaseConditionalDetector):
         return self
 
     def _score_core(self, X: pd.DataFrame) -> npt.NDArray[np.float64]:
-        check_is_fitted(self, ["_pipe", "_scale_"])
         if self.target_col not in X.columns:
             raise ValueError(f"target column '{self.target_col}' missing from X")
 

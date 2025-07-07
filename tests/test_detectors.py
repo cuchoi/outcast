@@ -111,4 +111,5 @@ def test_random_forest_categorical() -> None:
     labels = clf.predict(df)  # 1 = outlier
     flagged_ids = set(df.loc[labels == 1, "id"])  # which rows got flagged
 
-    assert {0, 1, 2}.intersection(flagged_ids), f"unexpected flags: {flagged_ids}"
+    # Check that all planted outliers were flagged
+    assert {0, 1, 2}.issubset(flagged_ids), f"unexpected flags: {flagged_ids}"
